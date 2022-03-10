@@ -1,0 +1,14 @@
+[Unit]
+Description=Counting service.
+Wants=network.target
+After=syslog.target 
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/service-sample
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
